@@ -1,0 +1,144 @@
+/** General **/
+header{
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	color: #CCFFFF;
+	font-weight: 500;
+	letter-spacing: 0.6em;
+	margin: 0.8em 0.2em;
+	padding-left: 40px;
+	padding-right: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+/*	background-color: #000000;*/
+	border-radius: 5px;
+	text-align: center;
+	font-size: 48;
+	opacity: 0.5;
+    background-image: -webkit-linear-gradient(left, rgba(0,51,102,0), rgba(0,51,102,0.75), rgba(0,51,102,0));
+    background-image: -moz-linear-gradient(left, rgba(0,51,102,0), rgba(0,51,102,0.75), rgba(0,51,102,0));
+    background-image: -ms-linear-gradient(left, rgba(0,51,102,0), rgba(0,51,102,0.75), rgba(0,51,102,0));
+    background-image: -o-linear-gradient(left, rgba(0,51,102,0), rgba(0,51,102,0.75), rgba(0,51,102,0));
+}
+
+body{
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	margin: 0 auto 1em auto;
+	width: 1000px;
+	background-image:url('../images/cartographer.png');
+	background-color: #353535;
+	text-align: center;
+}
+
+h2{
+	font-size: 14pt;
+	line-height: 12pt;
+}
+
+p {
+	line-height: 10pt;	
+}
+
+hr{
+    border: none;
+    border-top: medium double #333; 
+    border-bottom: medium double #333; 
+    border-radius: 2px;
+    height: 30px;
+    margin: 3em auto;
+    color: #00000;
+/*    background-color: #000000;*/
+    opacity: 0.5;
+     background-image: -webkit-linear-gradient(left, rgba(0,102,51,0), rgba(0,102,51,0.8), rgba(0,102,51,0));
+    background-image: -moz-linear-gradient(left, rgba(0,102,51,0), rgba(0,102,51,0.8), rgba(0,102,51,0));
+    background-image: -ms-linear-gradient(left, rgba(0,102,51,0), rgba(0,102,51,0.8), rgba(0,102,51,0));
+    background-image: -o-linear-gradient(left, rgba(0,102,51,0), rgba(0,102,51,0.8), rgba(0,102,51,0));
+}
+
+/* Glyph, by Harry Roberts */ 
+hr.inf { 
+    padding: 0 1em; 
+    border: none; 
+    border-top: medium double #333; 
+    border-bottom: medium double #333; 
+    color: #333; 
+    text-align: center; 
+} 
+
+hr.inf:after { 
+    content: "\0221E"; 
+    display: inline-block; 
+    position: relative; 
+    top: -0.2em; 
+    font-size: 1.5em; 
+    padding: 0 0.25em; 
+    color: white;
+    font-size: 36;
+	opacity: 0.5;
+}
+
+
+img.centered{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 25px;
+}
+
+footer{
+	background-color: #000000;
+	font-family: Tahoma;
+	color: #C0C0CA;
+	font-size: smaller;
+	padding-left: 5px;
+	padding-right: 25px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-radius: 5px;
+	clear: both;		
+}
+
+/** Layout **/
+
+#container {
+   position: relative;
+}
+
+#background {
+   position: absolute;
+   top: -0.12em;
+   left: 0;
+   bottom: 0;
+   right: -100;
+   z-index: -1;
+   overflow: hidden;
+   text-align: left;
+   font-size: 50;
+   letter-spacing: -0.04em;
+   color: #CCFFCC;
+   opacity: 0.3;
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.rotate270 {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.rotate180 {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
