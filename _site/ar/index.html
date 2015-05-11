@@ -1,16 +1,16 @@
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html>
 <head>
-    <!-- <3 crafted with love from rb to md <3 April 2014 -->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>. . . mobile lo-fi AR . . .</title>
-	<link rel="stylesheet" href="css/main.css" type="text/css">
+    <title>. . . arebe.github.io . . .</title>
+	<link rel="stylesheet" href="/css/main.css" type="text/css">
+
 </head>
 
 <body>
     <header>
-          m.lofi.ar
+          arebe.github.io
     </header>
     <hr>
 
@@ -22,6 +22,7 @@
     <video Id="video" Width="640" Height="480" Autoplay></video>
     <button Id="toggle">toggle</button>
     <canvas Id="canvas" Width="640" Height="480"></canvas>
+    <div id="bh_canvas"></div>
     </div>
     <hr>
     <hr>
@@ -70,16 +71,22 @@
 
         // Draw video to canvas
         setInterval(function(){
-            context.drawImage(video, 0, 0, 640, 480);
+            var img=context.drawImage(video, 0, 0, 640, 480);
             if(toggle){
                 context.strokeText("Hellooooo", 10, 480/2);
             }
         }, 33);
+
+  
         
     }, false);
     
 
     </script>
+
+
+
+
 
 </body>
 </html>

@@ -1,0 +1,76 @@
+---
+title: mlofiar
+layout: default
+---
+
+    <div Id="container">
+        <div Id="background">
+            videophoto
+        </div>
+    <!-- From Http://davidwalsh.name/browser-camera -->
+    <video Id="video" Width="640" Height="480" Autoplay></video>
+    <button Id="toggle">toggle</button>
+    <canvas Id="canvas" Width="640" Height="480"></canvas>
+    <div id="bh_canvas"></div>
+    </div>
+    <hr>
+    <hr>
+    <hr>
+
+    <script>
+    // Put event listeners into place
+    window.addEventListener("DOMContentLoaded", function() {
+        // Grab elements, create settings, etc.
+        var canvas = document.getElementById("canvas"),
+            context = canvas.getContext("2d"),
+            video = document.getElementById("video"),
+            videoObj = { "video": true },
+            errBack = function(error) {
+                console.log("Video capture error: ", error.code); 
+            };
+
+        // Put video listeners into place
+        if(navigator.getUserMedia) { // Standard
+            navigator.getUserMedia(videoObj, function(stream) {
+                video.src = stream;
+                video.play();
+            }, errBack);
+        } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+            navigator.webkitGetUserMedia(videoObj, function(stream){
+                video.src = window.webkitURL.createObjectURL(stream);
+                video.play();
+            }, errBack);
+        }
+        else if(navigator.mozGetUserMedia) { // Firefox-prefixed
+            navigator.mozGetUserMedia(videoObj, function(stream){
+                video.src = window.URL.createObjectURL(stream);
+                video.play();
+            }, errBack);
+        }
+
+        var toggle = false;
+        video.style.position = "absolute";
+        video.style.visibility = "hidden";
+
+        // Trigger canvas drawings
+        document.getElementById("toggle").addEventListener("click", function() {
+            context.font = "130px Arial";
+            toggle = !toggle;
+        });
+
+        // Draw video to canvas
+        setInterval(function(){
+            var img=context.drawImage(video, 0, 0, 640, 480);
+            if(toggle){
+                context.strokeText("Hellooooo", 10, 480/2);
+            }
+        }, 33);
+
+  
+        
+    }, false);
+    
+
+    </script>
+
+
