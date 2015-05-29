@@ -1,0 +1,27 @@
+{
+  "nodes": [
+    {"x": 640, "y": 88},
+    {"x": 569, "y": 387},
+    {"x": 372, "y": 73},
+    {"x": 236, "y": 375},
+    {"x": 837, "y": 185},
+    {"x": 124, "y": 210}
+  ],
+  "links": [
+    {"source":  0, "target":  1},
+    {"source":  0, "target":  2},
+    {"source":  0, "target":  3},
+    {"source":  0, "target":  4},
+    {"source":  1, "target":  2},
+    {"source":  1, "target":  3},
+    {"source":  1, "target":  4},
+    {"source":  2, "target":  3},
+    {"source":  2, "target":  4},
+    {"source":  3, "target":  4},
+    {"source":  0, "target":  5},
+    {"source":  1, "target":  5},
+    {"source":  2, "target":  5},
+    {"source":  3, "target":  5},
+    {"source":  4, "target":  5}
+  ]
+}

@@ -1,0 +1,17 @@
+.link {
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-dasharray: 2 3;
+}
+
+.node {
+  cursor: move;
+  fill: #2988e8;
+  stroke: #2a29e8;
+  stroke-width: 1.5px;
+}
+
+.node.fixed {
+  fill: #e7e829;
+  stroke: #dedf18;
+}
