@@ -1,6 +1,6 @@
 .link {
   stroke: #fff;
-  stroke-width: 4px;
+  stroke-width: 10px;
   stroke-dasharray: 2 3;
 }
 
@@ -14,4 +14,19 @@
 .node.fixed {
   fill: #e7e829;
   stroke: #dedf18;
+}
+
+.node:hover text {
+  pointer-events: none;
+  font: 32px sans-serif;
+  stroke: #fff;
+  fill: #fff;
+  color: #fff;
+}
+
+.link:hover {
+  stroke: #e7e829;
+  stroke-width: 14px;
+  stroke-dasharray: 0;
+
 }
