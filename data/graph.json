@@ -1,11 +1,11 @@
 {
   "nodes": [
-    {"name": "whatever", "x": 640, "y": 88},
-    {"x": 569, "y": 387},
-    {"x": 372, "y": 73},
-    {"x": 236, "y": 375},
-    {"x": 837, "y": 185},
-    {"x": 124, "y": 210}
+    {"name": "fiction", "x": 640, "y": 88},
+    {"name": "perception", "x": 569, "y": 387},
+    {"name": "expression", "x": 372, "y": 73},
+    {"name": "biohacking", "x": 236, "y": 375},
+    {"name": "transmittance", "x": 837, "y": 185},
+    {"name": "real/virtual", "x": 124, "y": 210}
   ],
   "links": [
     {"source":  0, "target":  1},

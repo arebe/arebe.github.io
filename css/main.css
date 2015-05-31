@@ -68,6 +68,10 @@ a{
 	color: #669999;
 }
 
+body {
+	color: #999;
+}
+
 #rb{
 	background-image:url('../images/rb_upper.png');
 	position: fixed;

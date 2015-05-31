@@ -16,7 +16,7 @@
   stroke: #dedf18;
 }
 
-.node:hover text {
+.node text {
   pointer-events: none;
   font: 32px sans-serif;
   stroke: #fff;
