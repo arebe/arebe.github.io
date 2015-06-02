@@ -8,81 +8,110 @@ layout: default
     hello, hi there
     </p>
 
+ <!-- gallery modals -->
+  <div class="easy-modal" id="modal0">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>fiction - perception</h3>
+    <h2>Chromodynamics</h2> 
+  </div>
+  <div class="easy-modal" id="modal1">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>fiction - expression</h3>
+    <h2><a href="https://www.facebook.com/arreffbee">R Oast Beest</a></h2>     
+  </div>
+  <div class="easy-modal" id="modal2">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>fiction - biohacking</h3>
+    <h2><a href="http://b.rainworms.com">Brainworms Radio</a></h2> 
+  </div>
+  <div class="easy-modal" id="modal3">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>fiction - transmittance</h3>
+    <h2><a href="http://alrighteros.com">Alright Eros</a></h2>
+  </div>
+  <div class="easy-modal" id="modal4">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>perception - expression</h3>
+    <h2><a href="http://tentimes.edgeofforever.net/">Time Ten Times</a></h2>
+  </div>
+  <div class="easy-modal" id="modal5">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>perception - biohacking</h3>
+    <h2><a href="http://demo.arebe.us/chrysal_is.html">chrysal IS</a></h2>
+  </div>
+  <div class="easy-modal" id="modal6">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>perception - transmittance</h3>
+    <h2>Rain Bleep</h2>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/u2ou_aVLrMU" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="easy-modal" id="modal7">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>expression - biohacking</h3>
+    <h2>???</h2>
+  </div>
+    <div class="easy-modal" id="modal8">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>expression - transmittance</h3>
+    <h2><a href="http://docshop.space">DocShop</a></h2>
+  </div>
+    <div class="easy-modal" id="modal9">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>biohacking - transmittance</h3>
+    <h2>DIY Bio</h2>
+  </div>
+    <div class="easy-modal" id="modal10">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>fiction - real/virtual</h3>
+    <h2><a href="http://pci-institute.com">Proprietary Career Institute</a></h2>
+  </div>
+    <div class="easy-modal" id="modal11">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>perception - real/virtual</h3>
+    <h2>ASMR Bathroom, Braingasm Remix</h2>
+  </div>
+    <div class="easy-modal" id="modal12">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>expression - real/virtual</h3>
+    <h2><a href="http://demo.arebe.us/protovideo.html">Protovideo</a></h2>
+  </div>
+    <div class="easy-modal" id="modal13">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>biohacking - real/virtual</h3>
+    <h2><a href="https://www.flickr.com/search/?text=small%20world&sort=relevance&user_id=37244458%40N05">Small World</a></h2>
+  </div>
+  <div class="easy-modal" id="modal14">
+    <span class="btn_x easy-modal-close">X</span>
+    <h3>transmittance - real/virtual</h3>
+    <h2><a href="http://p3.edgeofforever.net/5">Tune Glue</a></h2>
+  </div>
 
-<script>
-// from http://bl.ocks.org/mbostock/3750558
-var width = 960,
-    height = 500;
 
-var force = d3.layout.force()
-    .size([width, height])
-    .charge(-1200)
-    .linkDistance(220)
-    .on("tick", tick);
-
-var drag = force.drag()
-    .on("dragstart", dragstart);
-
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-var link = svg.selectAll(".link"),
-    node = svg.selectAll(".node");
-
-d3.json("data/graph.json", function(error, graph) {
-  force
-      .nodes(graph.nodes)
-      .links(graph.links)
-      .start();
-
-  link = link.data(graph.links)
-    .enter().append("line")
-      .attr("class", "link")
-      .on("click", linkclick);
+</div> <!-- end gallery -->
 
 
-var node = svg.selectAll(".node")
-    .data(graph.nodes)
-    .enter().append("g")
-    .attr("class", "node")
-    .on("dblclick", dblclick)
-    .call(force.drag);
+    <script src="js/diagram.js"></script>
+    <script src="js/jquery.easyModal.js"></script>
 
-node.append("circle")
-    .attr("r", 20);
+<script type="text/javascript">
+  $(function() {
+    $('.easy-modal').easyModal({
+      // top: 20,
+      overlay: 0.2,
+      overlayColor: "#333",
+      overlayOpacity: 0.8,
+    });
 
-node.append("text")
-      .attr("dx", 10)
-      .attr("dy", ".35em")
-      .attr("text-anchor", "middle")
-      .text(function(d) { return d.name })
-      .style("stroke", "gray");
+    $('.easy-modal-open').click(function(e) {
+      var target = $(this).attr('href');
+      $(target).trigger('openModal');
+      e.preventDefault();
+    });
 
-});
+    $('.easy-modal-close').click(function(e) {
+      $('.easy-modal').trigger('closeModal');
+    });
 
-function tick() {
-  link.attr("x1", function(d) { return d.source.x; })
-      .attr("y1", function(d) { return d.source.y; })
-      .attr("x2", function(d) { return d.target.x; })
-      .attr("y2", function(d) { return d.target.y; });
-
-   d3.selectAll("circle").attr("cx", function (d) { return d.x; })
-        .attr("cy", function (d) { return d.y; });
-   d3.selectAll("text").attr("x", function (d) { return d.x; })
-        .attr("y", function (d) { return d.y; });
-}
-
-function dblclick(d) {
-  d3.select(this).classed("fixed", d.fixed = false);
-}
-
-function dragstart(d) {
-  d3.select(this).classed("fixed", d.fixed = true);
-}
-
-function linkclick(){
-  console.log("link clicked");
-}
+  });
 
 </script>
