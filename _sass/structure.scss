@@ -1,0 +1,19 @@
+img, svg {
+	width: 100%;
+	height: auto;
+}
+
+a {
+	background: rgba(100, 100, 100, 0.9);
+	padding: 4px 4px 2px 6px;
+	color: #e7e829;
+
+	&:hover {
+		color: rgba(100, 100, 100, 0.9);
+		background: #e7e829;
+	}
+}
+
+p {
+	color: #8A8A8A;
+}

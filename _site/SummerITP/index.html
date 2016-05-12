@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tone Song</title>
+	<script type="text/javascript" src="http://cdn.tonejs.org/r5-dev/Tone.js"></script>
+	<script type="text/javascript" src="./Synths.js"></script>
+	<script type="text/javascript" src="./Score.js"></script>
+
+	<style>
+	#btn_play {
+	  background: #1c451c;
+	  background-image: -webkit-linear-gradient(top, #1c451c, #99cc8e);
+	  background-image: -moz-linear-gradient(top, #1c451c, #99cc8e);
+	  background-image: -ms-linear-gradient(top, #1c451c, #99cc8e);
+	  background-image: -o-linear-gradient(top, #1c451c, #99cc8e);
+	  background-image: linear-gradient(to bottom, #1c451c, #99cc8e);
+	  -webkit-border-radius: 11;
+	  -moz-border-radius: 11;
+	  border-radius: 11px;
+	  font-family: Courier New;
+	  color: #ffffff;
+	  font-size: 20px;
+	  padding: 10px 20px 10px 20px;
+	  border: solid #000000 2px;
+	  text-decoration: none;
+	}
+
+	#btn_play:hover {
+	  background: #2abf2f;
+	  background-image: -webkit-linear-gradient(top, #2abf2f, #9fd934);
+	  background-image: -moz-linear-gradient(top, #2abf2f, #9fd934);
+	  background-image: -ms-linear-gradient(top, #2abf2f, #9fd934);
+	  background-image: -o-linear-gradient(top, #2abf2f, #9fd934);
+	  background-image: linear-gradient(to bottom, #2abf2f, #9fd934);
+	  text-decoration: none;
+	}
+	</style>
+</head>
+<body>
+	<button type="button" id="btn_play" > &gt; </button>
+
+	<script type= "text/javascript">
+	var playBtn = document.getElementById("btn_play");
+	var playing = false;
+	playBtn.addEventListener("click", function(){
+		if(!playing){
+			console.log("starting");
+			Tone.Transport.start();
+		}
+		else{
+			Tone.Transport.stop();
+		}
+		playing=!playing;
+	})
+	</script>
+
+</body>
+</html>

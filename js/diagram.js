@@ -1,4 +1,4 @@
-// from http://bl.ocks.org/mbostock/3750558
+// ht http://bl.ocks.org/mbostock/3750558
 var width = 960,
     height = 500;
 
