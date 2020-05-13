@@ -11,14 +11,16 @@ var force = d3.layout.force()
 var drag = force.drag()
     .on("dragstart", dragstart);
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+var svg = d3.select('div#diagram-container')
+  .append("svg")
+  .attr("preserveAspectRatio", "xMinYMin meet")
+  .attr("viewBox", `0 0 ${width} ${height}`)
+  .classed("svg-content", true);
 
 var link = svg.selectAll(".link"),
     node = svg.selectAll(".node");
 
-d3.json("data/graph.json", function(error, graph) {
+d3.json("/data/graph.json", function(error, graph) {
   force
       .nodes(graph.nodes)
       .links(graph.links)
