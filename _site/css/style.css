@@ -75,3 +75,22 @@ h1 {
   border-radius: 7px 7px 7px 7px;
   -moz-border-radius: 7px 7px 7px 7px;
   -webkit-border-radius: 7px 7px 7px 7px; }
+
+@media only screen and (max-device-width: 1024px) {
+  .btn_x {
+    left: 273px; }
+
+  .easy-modal,
+  .easy-modal-animated {
+    width: 300px;
+    padding: 0.25em; }
+
+  .gallery-label {
+    top: -40px;
+    font-size: 10pt; }
+
+  .easy-modal h2 {
+    font-size: 15pt; }
+
+  .gallery-description p {
+    font-size: 10.5pt; } }
